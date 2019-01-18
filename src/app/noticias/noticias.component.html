@@ -1,0 +1,9 @@
+<div class="form-group">
+    <label for="exampleFormControlInput1">Busca:</label>
+    <input type="text" class="form-control" [(ngModel)]="queryString" id="filtro" placeholder="filtro">
+  </div>
+  
+<ul class="list-group" *ngIf="noticias">
+  <li class="list-group-item list-group-item-action active">Lab News RBS</li>
+  <li class="list-group-item list-group-item-action" *ngFor="let n of noticias.news | filterdata: queryString : 'title' ; let i = index"><i class="far fa-newspaper"></i> {{  n.title }} </li>
+</ul>
